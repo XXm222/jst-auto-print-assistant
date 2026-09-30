@@ -1,0 +1,27 @@
+聚水潭安全打单助手 V0.5.25（Windows x64）
+
+本源码仓库不包含生产后台访问凭据。
+首次运行前将 jst_operator_config.example.json 复制为 jst_operator_config.json，并填写自己的后台地址与 token。
+填写生产配置后的运行包只允许交付给批准的固定仓库电脑，禁止上传公共网盘、群聊或工单。
+
+一、直接运行源码（最快）
+
+1. 安装 CPython 3.10 64 位 AMD64，并确保 Windows 提供 py.exe。
+2. 完整解压本 ZIP，不能只复制单个文件。
+3. 关闭 V0.5.18 和其他聚水潭打单助手进程。
+4. 双击 Win10_21H1_源码直接启动.bat。
+5. 脚本会用 SHA256 锁定依赖并以“不打印试运行”启动 V0.5.25。
+
+注意：“不打印”只保证不调用实体打印 API；点击软件里的“开始”后仍可能真实改快递和获取电子面单号，只能使用事先批准的验收订单。
+
+二、构建正式 EXE
+
+在同一目录双击 build_jst_auto_print_win10_x64.bat。构建成功后使用：
+
+dist_win10_x64\JSTAutoPrint_Win10_21H1_V0.5.25.zip
+
+只有脚本显示 BUILD SUCCESSFUL，且 ZIP、EXE 自检和 SHA256 全部通过，才允许交付。
+
+三、生产切换
+
+后台已经升级为 API schema 5，要求匹配 API schema 5，最低客户端版本由 ping 返回；本包客户端为 V0.5.25。精确回读必须包含 has_print_request 和 waybill_fingerprint；禁止继续运行截图中的 V0.5.18，也禁止新旧版本并行。首次正式打印必须先完成离线自检、不打印试运行和一单实体纸张验收。

@@ -1,0 +1,9 @@
+# V0.5.25 source-runtime lock for CPython 3.10 AMD64 on Windows.
+# Install only with --require-hashes and --only-binary=:all:.
+
+pip==26.2 \
+    --hash=sha256:931c303696af6fa3417112103b1cad26890e5a07eccb5b99783700e33f2b8aad
+setuptools==84.0.0 \
+    --hash=sha256:51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670
+websocket-client==1.9.0 \
+    --hash=sha256:af248a825037ef591efbf6ed20cc5faa03d3b47b9e5a2230a529eeee1c1fc3ef

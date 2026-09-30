@@ -1,0 +1,6 @@
+{
+  "api_url": "https://your-backend.example.com/jst-print-api/v1",
+  "api_token": "",
+  "debug_port": 9222,
+  "loop_seconds": 5
+}

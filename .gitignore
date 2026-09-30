@@ -1,0 +1,39 @@
+# Credentials and local configuration
+jst_operator_config.json
+jst_operator_config.local.json
+.env
+*.env
+!*.env.example
+*.pem
+*.key
+# Python and build environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.*venv*/
+.mac-build-spec/
+.mac-build-work/
+.pyinstaller-work-win10/
+.pyinstaller-spec-win10/
+*.spec
+# Generated packages, audit output and operational data
+dist*/
+outputs/
+test_results/
+js_reverse_cache/
+reverse-records/
+*.exe
+*.zip
+*.sha256
+*.orig
+*.log
+*.jsonl
+*.sqlite*
+*.db
+.DS_Store
+
+# Explicit Windows build paths
+.build-venv-win10/
+.runtime-venv-win10/
+dist_win10_x64/
