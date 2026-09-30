@@ -1,6 +1,6 @@
 <div align="center">
 
-![JST Auto Print Assistant](docs/assets/project-banner.svg)
+![聚水潭安全打单助手](docs/assets/project-banner.svg)
 
 # 🖨️ 聚水潭安全打单助手
 

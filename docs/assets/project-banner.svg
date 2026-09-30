@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
-  <title id="title">JST Auto Print Assistant</title>
-  <desc id="desc">Order coordination, persistent force skip and traceable operations. Client v0.5.25, API schema 5.</desc>
+  <title id="title">聚水潭安全打单助手</title>
+  <desc id="desc">订单协同、永久跳过与操作留痕。客户端 v0.5.25，API 协议 5。</desc>
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1228"/><stop offset="1" stop-color="#142947"/></linearGradient>
     <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#38bdf8"/><stop offset=".55" stop-color="#818cf8"/><stop offset="1" stop-color="#c084fc"/></linearGradient>
@@ -12,14 +12,14 @@
   <ellipse cx="1040" cy="80" rx="370" ry="300" fill="url(#glow)"/>
   <rect x="48" y="43" width="194" height="29" rx="14" fill="#0ea5e9" fill-opacity=".14" stroke="#38bdf8" stroke-opacity=".35"/>
   <circle cx="65" cy="57" r="4" fill="#38bdf8"/>
-  <text x="78" y="62" fill="#7dd3fc" font-family="Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">WAREHOUSE WORKFLOW</text>
-  <text x="48" y="142" fill="#f8fafc" font-family="Arial, sans-serif" font-size="53" font-weight="700" letter-spacing="-1.5">JST AUTO PRINT</text>
-  <text x="50" y="182" fill="url(#accent)" font-family="Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="8">ASSISTANT</text>
-  <text x="50" y="218" fill="#a5b4cc" font-family="Arial, sans-serif" font-size="16">Coordinated orders. Persistent decisions. Traceable operations.</text>
-  <g font-family="Arial, sans-serif" font-size="11" font-weight="700">
-    <rect x="50" y="240" width="120" height="28" rx="7" fill="#1e3a5f"/><text x="65" y="258" fill="#bae6fd">CLIENT v0.5.25</text>
-    <rect x="181" y="240" width="112" height="28" rx="7" fill="#342657"/><text x="196" y="258" fill="#ddd6fe">API SCHEMA 5</text>
-    <rect x="304" y="240" width="174" height="28" rx="7" fill="#113d3e"/><text x="319" y="258" fill="#99f6e4">361 macOS TESTS PASS</text>
+  <text x="78" y="62" fill="#7dd3fc" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.2">仓库订单处理</text>
+  <text x="48" y="142" fill="#f8fafc" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="53" font-weight="700" letter-spacing="-1.5">聚水潭安全打单助手</text>
+  <text x="50" y="182" fill="url(#accent)" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="25" font-weight="600" letter-spacing="2">自动打单 · 异常跳过 · 全程留痕</text>
+  <text x="50" y="218" fill="#a5b4cc" font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="16">订单协同流转，异常永久排除，操作全程可查。</text>
+  <g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif" font-size="11" font-weight="700">
+    <rect x="50" y="240" width="120" height="28" rx="7" fill="#1e3a5f"/><text x="65" y="258" fill="#bae6fd">客户端 v0.5.25</text>
+    <rect x="181" y="240" width="112" height="28" rx="7" fill="#342657"/><text x="196" y="258" fill="#ddd6fe">API 协议 5</text>
+    <rect x="304" y="240" width="174" height="28" rx="7" fill="#113d3e"/><text x="319" y="258" fill="#99f6e4">macOS 361 项测试通过</text>
   </g>
   <g transform="translate(948 65)" stroke="#7dd3fc" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <rect x="-24" y="-12" width="176" height="156" rx="28" fill="#0ea5e9" fill-opacity=".06" stroke-opacity=".18"/>
@@ -31,18 +31,18 @@
     <circle cx="131" cy="117" r="22" fill="#134e4a" stroke="#5eead4"/>
     <path d="M121 117 L128 124 L142 110" stroke="#5eead4"/>
   </g>
-  <g font-family="Arial, sans-serif">
+  <g font-family="PingFang SC, Microsoft YaHei, Noto Sans CJK SC, Arial, sans-serif">
     <rect x="50" y="310" width="346" height="66" rx="12" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".1"/>
     <rect x="50" y="326" width="3" height="34" rx="1.5" fill="#38bdf8"/>
-    <text x="71" y="338" fill="#f1f5f9" font-size="15" font-weight="700">ORDER COORDINATION</text>
-    <text x="71" y="360" fill="#94a3b8" font-size="12">Exact identity · Atomic leases · Batch execution</text>
+    <text x="71" y="338" fill="#f1f5f9" font-size="18" font-weight="700">订单协同</text>
+    <text x="71" y="360" fill="#94a3b8" font-size="13">精确识别 · 原子租约 · 批量执行</text>
     <rect x="427" y="310" width="346" height="66" rx="12" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".1"/>
     <rect x="427" y="326" width="3" height="34" rx="1.5" fill="#a78bfa"/>
-    <text x="448" y="338" fill="#f1f5f9" font-size="15" font-weight="700">PERSISTENT FORCE SKIP</text>
-    <text x="448" y="360" fill="#94a3b8" font-size="12">Operator confirmation · Backend exclusion</text>
+    <text x="448" y="338" fill="#f1f5f9" font-size="18" font-weight="700">永久跳过</text>
+    <text x="448" y="360" fill="#94a3b8" font-size="13">人工确认 · 后台永久排除</text>
     <rect x="804" y="310" width="346" height="66" rx="12" fill="#fff" fill-opacity=".035" stroke="#fff" stroke-opacity=".1"/>
     <rect x="804" y="326" width="3" height="34" rx="1.5" fill="#5eead4"/>
-    <text x="825" y="338" fill="#f1f5f9" font-size="15" font-weight="700">TRACEABLE OPERATIONS</text>
-    <text x="825" y="360" fill="#94a3b8" font-size="12">SQLite records · Recovery · Offline checks</text>
+    <text x="825" y="338" fill="#f1f5f9" font-size="18" font-weight="700">操作留痕</text>
+    <text x="825" y="360" fill="#94a3b8" font-size="13">SQLite 记录 · 状态恢复 · 离线自检</text>
   </g>
 </svg>
