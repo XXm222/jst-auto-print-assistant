@@ -18,7 +18,7 @@
 
 强制跳过无需有效租约或打印完成证明。未完成的同一订单租约被关闭；已完成任务原有完成原因保留。此接口不会修改聚水潭订单状态。
 
-部署前备份现有后台文件和 SQLite 数据库，替换后台 API、租约模块与匹配 planner。新建服务还需单独部署 ERP bridge，并在 `/etc/jst-print-api.env` 设置 token。使用 `server_batch_v056/jst-print-api.service` 作为模板。健康检查路径为 `/jst-print-api/health`，随后验证鉴权和 schema 5。
+部署前备份现有后台文件和 SQLite 数据库，替换后台 API、租约模块与匹配 planner。新建服务还需单独部署 ERP bridge，并在 `/etc/jst-print-api.env` 设置 token。使用 `server/jst-print-api.service` 作为模板。健康检查路径为 `/jst-print-api/health`，随后验证鉴权和 schema 5。
 
 仓库后台还包含默认关闭的外部系统订单过滤功能。对旧生产服务部署时，应审阅完整差异，并协调客户端切换。
 

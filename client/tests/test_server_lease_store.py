@@ -2,7 +2,14 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from server_batch_v056.jst_lease_store import ACTIVE, LeaseConflict, LeaseStore
+import sys
+
+SERVER_DIR = Path(__file__).resolve().parents[2] / "server"
+sys.path.insert(0, str(SERVER_DIR))
+try:
+    from jst_lease_store import ACTIVE, LeaseConflict, LeaseStore
+finally:
+    sys.path.remove(str(SERVER_DIR))
 
 
 class LeaseStoreBatchRenewTests(unittest.TestCase):

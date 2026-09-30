@@ -7,7 +7,8 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def _read(name: str) -> str:
-    return (ROOT / name).read_text(encoding="utf-8-sig")
+    base = ROOT.parent if name == ".gitignore" or name.startswith("server/") else ROOT
+    return (base / name).read_text(encoding="utf-8-sig")
 
 
 def _parse_hash_lock(name: str) -> dict[str, tuple[str, tuple[str, ...]]]:
@@ -173,7 +174,7 @@ class BuildSupplyChainTests(unittest.TestCase):
     def test_vm_input_preparation_targets_current_release(self):
         script = _read("vm_prepare_build_inputs.ps1")
         self.assertIn("JSTBuild_V0525", script)
-        self.assertIn("JSTAutoPrint_V0.5.25_Windows_SourceRuntime", script)
+        self.assertIn("jst-auto-print-assistant\\client", script)
         self.assertIn('"_V0.5.25_"', script)
         self.assertNotIn("JSTBuild_V0521", script)
         self.assertNotIn("V0.5.21_Windows_SourceRuntime", script)
@@ -250,7 +251,7 @@ class BuildSupplyChainTests(unittest.TestCase):
                 "聚水潭安全打单助手_V0.5.25_运行逻辑与流程图.md",
                 "Windows版打包说明.md",
                 "Windows源码运行包_先读.txt",
-                "server_batch_v056/DEPLOYMENT_V0.5.21.md",
+                "server/DEPLOYMENT_V0.5.21.md",
             )
         )
         self.assertNotIn("V0.5.20", docs)

@@ -47,6 +47,10 @@
 
 ## 🧭 系统架构
 
+📁 **[client/ 本地客户端](client/)** · **[server/ 服务器端](server/)**
+
+本地运行与打包文件集中在 `client/`，后台代码与部署模板集中在 `server/`。
+
 ```mermaid
 flowchart LR
     User["👤 仓库操作员"] --> Client["🖥️ 桌面客户端<br/>界面 · 队列 · 恢复"]
@@ -142,9 +146,10 @@ sequenceDiagram
 
 ### ① 准备配置
 
-复制示例文件，填入自己的 HTTPS 后台地址和 token：
+在仓库根目录进入 `client/`，复制示例文件，填入自己的 HTTPS 后台地址和 token：
 
 ```powershell
+cd client
 Copy-Item jst_operator_config.example.json jst_operator_config.json
 ```
 
@@ -205,7 +210,7 @@ pie showData
 
 `任意暂停类型` · `RUNNING 状态` · `无租约` · `跨工作站` · `服务重启` · `超过 200 条` · `身份变化` · `后台失败` · `保留完成证据` · `HTTP 鉴权`
 
-运行离线回归：
+在 `client/` 目录运行客户端与服务端离线回归：
 
 ```sh
 python -m unittest discover -s tests -p 'test_*.py'
@@ -215,10 +220,10 @@ python -m unittest discover -s tests -p 'test_*.py'
 
 | 目标 | 入口 | 说明 |
 | --- | --- | --- |
-| Windows x64 | [`build_jst_auto_print_win10_x64.bat`](build_jst_auto_print_win10_x64.bat) | 配置填写后构建，使用锁定依赖与打包校验 |
-| Windows Setup | [`jst_auto_print_installer.iss`](jst_auto_print_installer.iss) | 使用 Inno Setup 编译安装包 |
-| macOS ARM64 | [`build_jst_auto_print_macos.sh`](build_jst_auto_print_macos.sh) | macOS 构建入口 |
-| 后台服务 | [`jst-print-api.service`](server_batch_v056/jst-print-api.service) | systemd 模板，部署前调整环境与依赖 |
+| Windows x64 | [`build_jst_auto_print_win10_x64.bat`](client/build_jst_auto_print_win10_x64.bat) | 配置填写后构建，使用锁定依赖与打包校验 |
+| Windows Setup | [`jst_auto_print_installer.iss`](client/jst_auto_print_installer.iss) | 使用 Inno Setup 编译安装包 |
+| macOS ARM64 | [`build_jst_auto_print_macos.sh`](client/build_jst_auto_print_macos.sh) | macOS 构建入口 |
+| 后台服务 | [`jst-print-api.service`](server/jst-print-api.service) | systemd 模板，部署前调整环境与依赖 |
 
 > [!CAUTION]
 > 构建会将本机配置放入交付包。带生产 token 的产物只应交付给已授权电脑，不应上传到公共仓库或公开附件。
@@ -227,22 +232,29 @@ python -m unittest discover -s tests -p 'test_*.py'
 
 ```text
 jst-auto-print-assistant/
-├── jst_auto_print_app.py                   # 桌面客户端与执行队列
-├── jst_print_shadow_plan.py                # 只读规划与订单回读
-├── jst_operator_config.example.json        # 无凭据的配置模板
-├── server_batch_v056/
-│   ├── jst_print_api_server.py             # 鉴权、租约协调与跳过接口
-│   ├── jst_lease_store.py                  # 租约与永久排除的 SQLite 存储
-│   ├── jst_print_shadow_plan.py            # 后台只读规划
-│   ├── jst-print-api.service               # 服务部署模板
-│   └── jst-print-api.env.example           # 环境配置模板
-├── tests/                                 # 回归测试与现场诊断工具
-├── docs/
-│   ├── assets/project-banner.svg           # README 视觉素材
-│   └── force-skip-20260930.md              # 强制跳过接口与迁移说明
-├── build_jst_auto_print_win10_x64.bat       # Windows 构建入口
-├── jst_auto_print_installer.iss            # Setup 安装定义
-└── build_jst_auto_print_macos.sh            # macOS 构建入口
+├── client/                                # 本地客户端
+│   ├── README.md                          # 本地运行与打包说明
+│   ├── jst_auto_print_app.py               # 桌面界面与执行队列
+│   ├── jst_print_shadow_plan.py            # 本地诊断使用的只读规划模块
+│   ├── jst_operator_config.example.json    # 客户端配置模板
+│   ├── tests/                             # 客户端与服务端回归测试
+│   ├── build_jst_auto_print_win10_x64.bat   # Windows 构建入口
+│   ├── jst_auto_print_installer.iss         # Setup 安装定义
+│   ├── build_jst_auto_print_macos.sh        # macOS 构建入口
+│   └── 使用说明 / 诊断脚本 / 依赖锁文件
+├── server/                                # 服务器端
+│   ├── README.md                          # 服务端部署入口
+│   ├── jst_print_api_server.py             # 鉴权 API 与强制跳过接口
+│   ├── jst_lease_store.py                  # 租约与永久排除存储
+│   ├── jst_print_shadow_plan.py            # 服务端只读规划
+│   ├── jst-print-api.service               # systemd 服务模板
+│   ├── jst-print-api.env.example           # 服务端环境模板
+│   └── DEPLOYMENT_V0.5.21.md               # 基础部署说明
+├── docs/                                  # 共享说明与视觉素材
+│   ├── assets/                            # 封面与徽章
+│   └── force-skip-20260930.md              # 强制跳过与迁移说明
+├── .gitignore
+└── README.md                              # 项目总览
 ```
 
 <a id="documents"></a>
@@ -251,13 +263,13 @@ jst-auto-print-assistant/
 
 | 文档 | 阅读目的 |
 | --- | --- |
-| [📖 使用说明](聚水潭安全打单助手_使用说明.md) | 日常操作与运行边界 |
-| [🧭 V0.5.25 运行逻辑](聚水潭安全打单助手_V0.5.25_运行逻辑与流程图.md) | 当前版本的运行流程 |
+| [📖 使用说明](client/聚水潭安全打单助手_使用说明.md) | 日常操作与运行边界 |
+| [🧭 V0.5.25 运行逻辑](client/聚水潭安全打单助手_V0.5.25_运行逻辑与流程图.md) | 当前版本的运行流程 |
 | [⏭️ 强制跳过更新](docs/force-skip-20260930.md) | 永久排除、接口及迁移要求 |
-| [🏷️ 外部系统订单过滤](外部系统订单跳过功能说明.md) | 默认关闭的标签过滤功能 |
-| [📦 Windows 打包说明](Windows版打包说明.md) | Windows 交付构建与检查 |
-| [🍎 Mac 使用说明](Mac版使用说明.md) | Mac 端运行入口 |
-| [🔐 后台部署基础](server_batch_v056/DEPLOYMENT_V0.5.21.md) | 服务账号、凭据权限及 systemd |
+| [🏷️ 外部系统订单过滤](client/外部系统订单跳过功能说明.md) | 默认关闭的标签过滤功能 |
+| [📦 Windows 打包说明](client/Windows版打包说明.md) | Windows 交付构建与检查 |
+| [🍎 Mac 使用说明](client/Mac版使用说明.md) | Mac 端运行入口 |
+| [🔐 后台部署基础](server/DEPLOYMENT_V0.5.21.md) | 服务账号、凭据权限及 systemd |
 
 ---
 

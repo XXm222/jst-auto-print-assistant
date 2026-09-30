@@ -8,7 +8,7 @@ from pathlib import Path
 import jst_print_shadow_plan as planner
 import live_shadow_test as shadow
 
-SERVER_DIR = Path(__file__).resolve().parents[1] / "server_batch_v056"
+SERVER_DIR = Path(__file__).resolve().parents[2] / "server"
 sys.path.insert(0, str(SERVER_DIR))
 try:
     import jst_print_api_server as api

@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version 2.0
 
-$Root = "C:\Users\Public\JSTBuild_V0525\JSTAutoPrint_V0.5.25_Windows_SourceRuntime"
+$Root = "C:\Users\Public\JSTBuild_V0525\jst-auto-print-assistant\client"
 
 function Convert-CodePoints {
     param([int[]]$Codes)
