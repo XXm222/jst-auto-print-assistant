@@ -17,6 +17,7 @@
 ![Storage](docs/assets/badge-storage.svg)
 ![Tests](docs/assets/badge-tests.svg)
 ![Verified](docs/assets/badge-verified.svg)
+[![许可证：MIT](docs/assets/badge-license.svg)](LICENSE)
 
 [✨ 功能](#features) · [🧭 架构](#architecture) · [⏭️ 强制跳过](#force-skip) · [🚀 上手](#quick-start) · [🧪 验证](#verification) · [📚 文档](#documents)
 
@@ -256,6 +257,10 @@ jst-auto-print-assistant/
 ├── .gitignore
 └── README.md                              # 项目总览
 ```
+
+## 📜 开源许可证
+
+本项目采用 [MIT 许可证](LICENSE)。第三方依赖遵循各自的许可证。
 
 <a id="documents"></a>
 
